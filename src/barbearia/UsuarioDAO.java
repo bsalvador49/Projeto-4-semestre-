@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package barbearia;
 
 import java.sql.Connection;
@@ -10,8 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
-    
-    // MÉTODO 1: CADASTRO
+
     public boolean cadastrarCliente(String nome, String cpf, String senha, String telefone, String email) {
         String sql = "INSERT INTO usuarios (nome, cpf, senha, tipo_perfil, telefone, email) VALUES (?, ?, ?, 'CLIENTE', ?, ?)";
         
@@ -31,10 +25,8 @@ public class UsuarioDAO {
             System.out.println("Erro ao cadastrar cliente: " + e.getMessage());
             return false;
         }
-    } // <-- Fim do método cadastrarCliente
+    } 
 
-    
-    // MÉTODO 2: LOGIN (Colado logo em seguida)
     public String fazerLogin(String cpf, String senha) {
         String sql = "SELECT nome, tipo_perfil FROM usuarios WHERE cpf = ? AND senha = ?";
         
@@ -56,6 +48,6 @@ public class UsuarioDAO {
             System.out.println("Erro ao fazer login: " + e.getMessage());
         }
         return null; 
-    } // <-- Fim do método fazerLogin
+    } 
 
-} // <-- Fim da classe UsuarioDAO
+} 
