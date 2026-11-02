@@ -3,7 +3,10 @@ package barbearia.view;
 public enum OpcaoMenuPrincipal {
     CADASTRAR(1),
     LOGIN(2),
+    CADASTRAR_BARBEIRO(3), 
+    AGENDAR(4),
     SAIR(0);
+
 
     private final int valor;
 
